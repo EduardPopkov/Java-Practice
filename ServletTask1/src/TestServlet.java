@@ -21,7 +21,8 @@ public class TestServlet extends HttpServlet {
         PrintWriter printWriter = response.getWriter();
 
         printWriter.println("<html>");
-        printWriter.write("<table bgcolor=" + bgcolor + " border='2'>");
+
+        printWriter.println("<table bgcolor=" + bgcolor + " border=2>");
         for(int i = 0; i < rows; i++){
             printWriter.println("<tr>");
             for(int j = 0; j < columns; j++){
