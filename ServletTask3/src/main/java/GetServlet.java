@@ -32,7 +32,7 @@ public class GetServlet extends HttpServlet {
             ResultSet resultSet = statement.executeQuery("SELECT * FROM users");
 
             //printWriter.println("2");
-
+            //vjk
             while (resultSet.next()){
                 int id = resultSet.getInt(1);
                 String login = resultSet.getString(2);
