@@ -1,3 +1,5 @@
+import java.io.IOException;
+
 public class StrBufferAndBuilder {
     public static void main(String[] args) {
         //StringBuffer - синхронизир. и потокобезоп.
@@ -81,5 +83,49 @@ public class StrBufferAndBuilder {
 
         //reverse()
         System.out.println(stringBuffer.reverse());
+
+        /////////////////////////////////////////////////
+        String domain = ".ru";
+        StringBuffer site = new StringBuffer("mail");
+
+        site.append(domain);
+        System.out.println(site);
+
+        site.delete(site.length() - domain.length(), site.length());
+        System.out.println(site);
+
+        site.insert(site.length(), domain);
+        System.out.println(site);
+
+        /////////////////////////////////////////////////
+        //определяем скорость
+        try {
+            test(new StringBuffer());
+            test(new StringBuilder());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        /////////////////////////////////////////////////
+        String str = "";
+
+        long before = System.currentTimeMillis();
+        for(int i = 0; i++ < 1e9; ){
+            str += "";
+        }
+
+        long after = System.currentTimeMillis();
+
+        System.out.println("String: " + (after - before));
+    }
+
+    public static void test(Appendable obj) throws IOException {
+        long before = System.currentTimeMillis();
+        for(int i = 0; i++ < 1e9; ){
+            obj.append("");
+        }
+
+        long after = System.currentTimeMillis();
+        System.out.println(obj.getClass().getSimpleName() + ": " + (after - before));
     }
 }

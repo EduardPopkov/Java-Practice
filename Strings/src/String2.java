@@ -81,5 +81,31 @@ public class String2 {
         for(String s : arrStr){
             System.out.print(s + "-");
         }
+        System.out.println();
+
+        ////////////////////////////////////////////
+        String str = "1 000 000";
+        char[] arrChars = str.toCharArray();
+
+        for(int i = 0; i < arrChars.length; i++){
+            if(arrChars[i] == ' '){
+                arrChars[i] = '.';
+            }
+            System.out.print(arrChars[i]);
+        }
+        System.out.println();
+
+        ////////////////////////////////////////////
+        str = "www.mysite.ru";
+        str = str.substring(4, str.length() - 3);
+        System.out.println(str);
+
+        ////////////////////////////////////////////
+        str = "www.mysite.ru";
+        boolean isContains = str.contains("mysite");
+        System.out.println(isContains);
+
+        ////////////////////////////////////////////
+        System.out.println("маша".compareTo("Миша"));
     }
 }

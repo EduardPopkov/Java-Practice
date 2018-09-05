@@ -27,5 +27,35 @@ public class String1 {
         for(char i : helloArray){
             System.out.print(i + " ");
         }
+        System.out.println();
+
+        String[] cars = {"Волга", "Чайка", "Жигули"};
+        String text = "В гараже стоят машины: ";
+
+        for(int i = 0; i < cars.length; i++){
+            if(i != cars.length - 1){
+                text += cars[i] + ",";
+            } else{
+                text += cars[i] + ".";
+            }
+        }
+        System.out.println(text);
+
+        //////////////////////////////////////////////
+        String str = null;
+        str += " hello";
+        System.out.println(str); //null hello
+        //str = null;
+        //str.concat(" hello");
+        //System.out.println(str); //nullPointerException
+
+        //////////////////////////////////////////////
+        str = "123123";
+        int number = 5555;
+
+        number = Integer.parseInt(str);
+        str = String.valueOf(number);
+        System.out.println("number: " + number);
+        System.out.println("str: " + str);
     }
 }

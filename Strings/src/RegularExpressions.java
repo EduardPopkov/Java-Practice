@@ -31,5 +31,20 @@ public class RegularExpressions {
         //replaceAll
         String newStr = matcher.replaceAll("HTML");
         System.out.println(newStr);
+
+        ////////////////////////////////////////////////////
+        str = "Крещение Руси произошло в 988 году! Не так ли?" ;
+        String template = "(.*)(\\d+)(.*)";
+
+        pattern = Pattern.compile(template);
+
+        matcher = pattern.matcher(str);
+        if(matcher.find()){
+            System.out.println("найдено значение: " + matcher.group(0));
+            System.out.println("найдено значение: " + matcher.group(1));
+            System.out.println("найдено значение: " + matcher.group(2));
+        } else {
+            System.out.println("Не совпадает");
+        }
     }
 }
